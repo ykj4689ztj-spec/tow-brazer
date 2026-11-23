@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tow Brazer | تأسيس وتشطيب كهرباء</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: #020617;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .logo span {
+      color: #f97316;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-right: 25px;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+      background: linear-gradient(to bottom, #0f172a, #020617);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      color: #f8fafc;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      margin-bottom: 35px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+    }
+
+    /* Services */
+    .services {
+      padding: 80px 0;
+      background: #020617;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #f8fafc;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #1e293b;
+      padding: 35px 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #334155;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+    }
+
+    .service-card .icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #38bdf8;
+    }
+
+    .service-card p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    /* Why Us */
+    .why-us {
+      padding: 80px 0;
+      background: #0f172a;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      text-align: center;
+    }
+
+    .feature {
+      background: #1e293b;
+      padding: 30px 20px;
+      border-radius: 12px;
+    }
+
+    .feature h4 {
+      color: #f97316;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 80px 0;
+      background: #020617;
+      text-align: center;
+    }
+
+    .contact-info {
+      background: #1e293b;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 30px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .contact-info strong {
+      color: #38bdf8;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #25d366;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1da851;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .header-content {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">Tow <span>Brazer</span></div>
+      <nav>
+        <a href="#services">خدماتنا</a>
+        <a href="#why-us">ليه تختارنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>تأسيس وتشطيب <span>كهرباء</span> باحتراف</h1>
+      <p>نقدم خدمات تأسيس وتشطيب الكهرباء بأعلى جودة وأفضل الأسعار في المقطم</p>
+      <a href="https://wa.me/201155284381" class="btn" target="_blank">تواصل عبر واتساب</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">خدماتنا</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">⚡</div>
+          <h3>تأسيس كهرباء</h3>
+          <p>تأسيس كامل للشقق والفلل والمحلات من الصفر، بأفضل الخامات وأعلى معايير الأمان</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔌</div>
+          <h3>تشطيب كهرباء</h3>
+          <p>تشطيب احترافي يشمل التركيبات النهائية، الإضاءة، واللوحات الكهربائية بكل دقة</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🛠️</div>
+          <h3>صيانة وإصلاح</h3>
+          <p>صيانة سريعة وإصلاح الأعطال الكهربائية بكل أنواعها</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <h2 class="section-title">ليه تختار Tow Brazer؟</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>خبرة عالية</h4>
+          <p>فنيين متخصصين في التأسيس والتشطيب</p>
+        </div>
+        <div class="feature">
+          <h4>جودة مضمونة</h4>
+          <p>نستخدم خامات أصلية وموثوقة</p>
+        </div>
+        <div class="feature">
+          <h4>أسعار منافسة</h4>
+          <p>أسعار مناسبة مع جودة عالية</p>
+        </div>
+        <div class="feature">
+          <h4>التزام بالمواعيد</h4>
+          <p>نسلم الشغل في الوقت المحدد</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">تواصل معنا</h2>
+      <div class="contact-info">
+        <p><strong>العنوان:</strong><br>المقطم - شارع 9 - بجوار أبو أنس السوري</p>
+        <p><strong>رقم الواتساب:</strong><br>01155284381</p>
+        <a href="https://wa.me/201155284381" class="whatsapp-btn" target="_blank">
+          واتساب الآن
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Tow Brazer - جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+</body>
+</html>
