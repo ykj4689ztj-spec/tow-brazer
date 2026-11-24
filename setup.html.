@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تأسيس كهرباء | Tow Brazer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 15px;
+      background: #020617;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    header h1 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      color: #cbd5e1;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #d4af37;
+      color: #020617;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #d4af37;
+      cursor: pointer;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px 10px;
+      color: #cbd5e1;
+      grid-column: 1 / -1;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .contact a {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #viewer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.95);
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      z-index: 10;
+    }
+
+    #viewer img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+    }
+
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery img {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>تأسيس كهرباء</h1>
+  <p>Tow Brazer - أعمال تأسيس الكهرباء</p>
+  <a href="index.html" class="back">العودة للموقع الرئيسي</a>
+</header>
+
+<main class="container">
+  <h2 style="color:#d4af37; margin-bottom:20px;">
+    معرض أعمال التأسيس
+  </h2>
+
+  <div class="gallery" id="gallery">
+    <div class="empty">
+      صور أعمال التأسيس ستظهر هنا بعد إضافتها.
+    </div>
+  </div>
+</main>
+
+<div class="contact">
+  <h3 style="margin-bottom:15px;">عايز تنفذ شغل تأسيس كهرباء؟</h3>
+  <a href="https://wa.me/201124877770" target="_blank">
+    تواصل معنا عبر واتساب
+  </a>
+</div>
+
+<div id="viewer" onclick="this.style.display='none'">
+  <img id="largeImage" src="" alt="صورة من أعمال تأسيس الكهرباء">
+</div>
+
+<script>
+  // أضف أسماء صورك هنا بعد رفعها على GitHub
+  const photos = [
+    // "images/setup1.jpg",
+    // "images/setup2.jpg",
+    // "images/setup3.jpg"
+  ];
+
+  const gallery = document.getElementById("gallery");
+
+  if (photos.length > 0) {
+    gallery.innerHTML = "";
+
+    photos.forEach(photo => {
+      const img = document.createElement("img");
+      img.src = photo;
+      img.alt = "أعمال تأسيس كهرباء";
+      img.onclick = () => {
+        document.getElementById("largeImage").src = photo;
+        document.getElementById("viewer").style.display = "flex";
+      };
+      gallery.appendChild(img);
+    });
+  }
+</script>
+
+</body>
+</html>
