@@ -279,16 +279,14 @@ footer a {
   >
 
   <div class="categories" id="categories">
-  
-<button class="category active" data-category="all">كل المنتجات</button>
-<button class="category" data-category="lighting">إضاءات</button>
-<button class="category" data-category="cables">أسلاك وكابلات</button>
-<button class="category" data-category="hoses">خراطيم</button>
-<button class="category" data-category="venus">فينوس</button>
-<button class="category" data-category="sanchi">سانشي</button>
-<button class="category" data-category="kyon">كيون أبيض وأسود</button>
-<button class="category" data-category="breakers">قواطع</button>
-
+    <button type="button" class="category active" data-category="all">كل المنتجات</button>
+    <button type="button" class="category" data-category="lighting">إضاءات</button>
+    <button type="button" class="category" data-category="cables">أسلاك وكابلات</button>
+    <button type="button" class="category" data-category="hoses">خراطيم</button>
+    <button type="button" class="category" data-category="venus">فينوس</button>
+    <button type="button" class="category" data-category="sanchi">سانشي</button>
+    <button type="button" class="category" data-category="kyon">كيون أبيض وأسود</button>
+    <button type="button" class="category" data-category="breakers">قواطع</button>
   </div>
 
   <div class="products" id="productList"></div>
@@ -319,7 +317,6 @@ footer a {
 </a>
 
 <script>
-
 const products = [
   {
     name: "إضاءات",
@@ -372,8 +369,6 @@ const products = [
   }
 ];
 
-
-
 const productList = document.getElementById("productList");
 const search = document.getElementById("search");
 const categoryButtons = document.querySelectorAll(".category");
@@ -420,7 +415,7 @@ function renderProducts() {
         <h3>${product.name}</h3>
         <p>${product.description}</p>
         <div class="price">${product.price}</div>
-        <a class="order" href="${whatsapp}" target="_blank">
+        <a class="order" href="${whatsapp}" target="_blank" rel="noopener">
           اطلب عبر واتساب
         </a>
       </div>
@@ -432,10 +427,13 @@ function renderProducts() {
 
 categoryButtons.forEach(button => {
   button.addEventListener("click", () => {
-    categoryButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-
     currentCategory = button.dataset.category;
+
+    categoryButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
     renderProducts();
   });
 });
@@ -446,4 +444,4 @@ renderProducts();
 </script>
 
 </body>
-</html> 
+</html>
