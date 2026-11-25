@@ -1,376 +1,478 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tow Brazer | تأسيس وتشطيب كهرباء</title>
-  <style>
-  
-  background: #d4af37 !important;
-  color: #080808 !important;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tow Brazer | متجر الأدوات الكهربائية</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.7;
-    }
+header {
+  background: #020617;
+  color: white;
+  padding: 18px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    /* Header */
-    header {
-      background: #020617;
-      padding: 18px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #1e293b;
-    }
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #38bdf8;
+}
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+}
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #38bdf8;
-    }
+.hero {
+  background: linear-gradient(135deg,#0f172a,#1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+}
 
-    .logo span {
-      color: #f97316;
-    }
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
 
-    nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-right: 25px;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
+.hero p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+.hero button {
+  margin-top: 22px;
+  padding: 13px 25px;
+  border: 0;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: #082f49;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    /* Hero */
-    .hero {
-      padding: 90px 0 70px;
-      text-align: center;
-      background: linear-gradient(to bottom, #0f172a, #020617);
-    }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 15px;
+}
 
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-      color: #f8fafc;
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
-    .hero h1 span {
-      color: #38bdf8;
-    }
+.section-title h2 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
 
-    .hero p {
-      font-size: 1.25rem;
-      color: #94a3b8;
-      margin-bottom: 35px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.search {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
 
-    .btn {
-      display: inline-block;
-      background: #25d366;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    }
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+}
 
-    .btn:hover {
-      background: #1da851;
-      transform: translateY(-2px);
-    }
+.category {
+  border: 1px solid #cbd5e1;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+}
 
-    /* Services */
-    .services {
-      padding: 80px 0;
-      background: #020617;
-    }
+.category.active {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 50px;
-      color: #f8fafc;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+.product {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px #00000010;
+  border: 1px solid #e2e8f0;
+}
 
-    .service-card {
-      background: #1e293b;
-      padding: 35px 30px;
-      border-radius: 16px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid #334155;
-    }
+.product-image {
+  height: 145px;
+  background: #e0f2fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
+}
 
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
-    }
+.product-info {
+  padding: 13px;
+}
 
-    .service-card .icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
+.product-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 
-    .service-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: #38bdf8;
-    }
+.product-info p {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
 
-    .service-card p {
-      color: #94a3b8;
-      font-size: 1rem;
-    }
+.price {
+  color: #0369a1;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
 
-    /* Why Us */
-    .why-us {
-      padding: 80px 0;
-      background: #0f172a;
-    }
+.order {
+  display: block;
+  text-align: center;
+  background: #16a34a;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      text-align: center;
-    }
+.no-results {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 35px;
+  color: #64748b;
+}
 
-    .feature {
-      background: #1e293b;
-      padding: 30px 20px;
-      border-radius: 12px;
-    }
+.about {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 2;
+}
 
-    .feature h4 {
-      color: #f97316;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-    }
+footer {
+  background: #020617;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 30px;
+}
 
-    /* Contact */
-    .contact {
-      padding: 80px 0;
-      background: #020617;
-      text-align: center;
-    }
+footer a {
+  color: #38bdf8;
+  text-decoration: none;
+}
 
-    .contact-info {
-      background: #1e293b;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 40px 30px;
-      border-radius: 16px;
-      border: 1px solid #334155;
-    }
+.floating-whatsapp {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  background: #25d366;
+  color: white;
+  padding: 13px 17px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 3px 12px #0003;
+}
 
-    .contact-info p {
-      margin: 15px 0;
-      font-size: 1.1rem;
-      color: #cbd5e1;
-    }
+@media(min-width:700px) {
+  .products {
+    grid-template-columns: repeat(4,1fr);
+  }
 
-    .contact-info strong {
-      color: #38bdf8;
-    }
+  .product-image {
+    height: 180px;
+  }
 
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 25px;
-      background: #25d366;
-      color: white;
-      padding: 16px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      transition: all 0.3s;
-    }
-
-    .whatsapp-btn:hover {
-      background: #1da851;
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      background: #020617;
-      text-align: center;
-      padding: 25px 0;
-      border-top: 1px solid #1e293b;
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.1rem;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .header-content {
-        justify-content: center;
-      }
-    }
-  </style>
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container header-content">
-      <div class="logo">Tow <span>Brazer</span></div>
-      <nav>
-        <a href="#services">خدماتنا</a>
-        <a href="#why-us">ليه تختارنا</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav">
+    <div class="logo">⚡ Tow Brazer</div>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#about">عن المحل</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>تأسيس وتشطيب <span>كهرباء</span> باحتراف</h1>
-      <p>نقدم خدمات تأسيس وتشطيب الكهرباء بأعلى جودة وأفضل الأسعار في المقطم</p>
-      <a href="https://wa.me/201155284381" class="btn" target="_blank">تواصل عبر واتساب</a>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2 class="section-title">خدماتنا</h2>
-      <div class="services-grid">
-        
-<a href="setup.html" class="service-card" style="display:block; text-decoration:none; color:inherit;">
-
-  <div class="icon">⚡</div>
-
-  <h3>تأسيس كهرباء</h3>
-
-  <p>تأسيس كامل للشقق والفلل والمحلات من الصفر، بأفضل الخامات وأعلى معايير الأمان</p>
-
-  <p style="margin-top:15px; color:#38bdf8;">
-    اضغط لمشاهدة أعمالنا ←
-  </p>
-
-</a>
-
-        </div>
-      
-<a href="finishing.html" class="service-card" style="display:block; text-decoration:none; color:inherit;">
-
-  <div class="icon">⚡</div>
-
-  <h3>تشطيب كهرباء</h3>
-
+<section class="hero" id="home">
+  <h1>متجر Tow Brazer للأدوات الكهربائية</h1>
   <p>
-    تشطيب وتركيب المفاتيح والبرايز والإضاءة
-    بأعلى جودة واحترافية.
+    مستلزمات كهربائية وإضاءة وأدوات بجودة عالية
+    <br>
+    اختار منتجاتك وتواصل معنا للطلب
   </p>
 
-  <p style="margin-top:15px; color:#d4af37;">
-    اضغط لمشاهدة أعمالنا ←
-  </p>
+  <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+    تسوق المنتجات
+  </button>
+</section>
 
+<main class="container" id="products">
+
+  <div class="section-title">
+    <h2>منتجاتنا</h2>
+    <p>اختار القسم أو ابحث عن المنتج اللي محتاجه</p>
+  </div>
+
+  <input
+    type="search"
+    class="search"
+    id="search"
+    placeholder="🔍 ابحث عن منتج..."
+  >
+
+  <div class="categories" id="categories">
+    <button class="category active" data-category="all">كل المنتجات</button>
+    <button class="category" data-category="lighting">الإضاءة</button>
+    <button class="category" data-category="switches">مفاتيح وبرايز</button>
+    <button class="category" data-category="cables">أسلاك وكابلات</button>
+    <button class="category" data-category="breakers">قواطع ولوحات</button>
+    <button class="category" data-category="tools">عدد وأدوات</button>
+    <button class="category" data-category="accessories">مستلزمات كهرباء</button>
+  </div>
+
+  <div class="products" id="productList"></div>
+
+  <section class="about" id="about">
+    <h2>عن Tow Brazer</h2>
+    <p>
+      متجر متخصص في بيع الأدوات والمستلزمات الكهربائية،
+      نسعى لتوفير منتجات متنوعة لتلبية احتياجات عملائنا.
+    </p>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <h3>تواصل معنا</h3>
+  <p>للاستفسار عن المنتجات والأسعار والطلبات</p>
+  <p>واتساب: 01155284381</p>
+  <p style="margin-top:15px">
+    © 2026 Tow Brazer - جميع الحقوق محفوظة
+  </p>
+</footer>
+
+<a class="floating-whatsapp"
+   href="https://wa.me/201155284381"
+   target="_blank">
+  واتساب
 </a>
 
-        <div class="service-card">
-          <div class="icon">🛠️</div>
-          <h3>صيانة وإصلاح</h3>
-          <p>صيانة سريعة وإصلاح الأعطال الكهربائية بكل أنواعها</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+const products = [
+  {
+    name: "لمبة LED",
+    category: "lighting",
+    icon: "💡",
+    description: "لمبات موفرة للطاقة",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "سبوت LED",
+    category: "lighting",
+    icon: "🔆",
+    description: "سبوتات للإضاءة الداخلية",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "مفتاح كهرباء",
+    category: "switches",
+    icon: "🔘",
+    description: "مفاتيح كهربائية متنوعة",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "بريزة كهرباء",
+    category: "switches",
+    icon: "🔌",
+    description: "برايز ومخارج كهرباء",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "أسلاك كهربائية",
+    category: "cables",
+    icon: "🧵",
+    description: "أسلاك بمقاسات مختلفة",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "كابل كهرباء",
+    category: "cables",
+    icon: "〰️",
+    description: "كابلات للاستخدامات المختلفة",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "قاطع كهرباء",
+    category: "breakers",
+    icon: "⚙️",
+    description: "قواطع حماية كهربائية",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "لوحة توزيع",
+    category: "breakers",
+    icon: "🗄️",
+    description: "لوحات توزيع كهرباء",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "مفك كهرباء",
+    category: "tools",
+    icon: "🪛",
+    description: "أدوات كهربائيين",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "أفوميتر",
+    category: "tools",
+    icon: "🔧",
+    description: "أجهزة قياس كهربائية",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "علبة كهرباء",
+    category: "accessories",
+    icon: "📦",
+    description: "علب ومستلزمات تركيب",
+    price: "اسأل عن السعر"
+  },
+  {
+    name: "مستلزمات تركيب",
+    category: "accessories",
+    icon: "🧰",
+    description: "مستلزمات وأكسسوارات كهربائية",
+    price: "اسأل عن السعر"
+  }
+];
 
-  <!-- Why Us -->
-  <section class="why-us" id="why-us">
-    <div class="container">
-      <h2 class="section-title">ليه تختار Tow Brazer؟</h2>
-      <div class="features">
-        <div class="feature">
-          <h4>خبرة عالية</h4>
-          <p>فنيين متخصصين في التأسيس والتشطيب</p>
-        </div>
-        <div class="feature">
-          <h4>جودة مضمونة</h4>
-          <p>نستخدم خامات أصلية وموثوقة</p>
-        </div>
-        <div class="feature">
-          <h4>أسعار منافسة</h4>
-          <p>أسعار مناسبة مع جودة عالية</p>
-        </div>
-        <div class="feature">
-          <h4>التزام بالمواعيد</h4>
-          <p>نسلم الشغل في الوقت المحدد</p>
-        </div>
-      </div>
-    </div>
-  </section>
+const productList = document.getElementById("productList");
+const search = document.getElementById("search");
+const categoryButtons = document.querySelectorAll(".category");
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">تواصل معنا</h2>
-      <div class="contact-info">
-        <p><strong>العنوان:</strong><br>المقطم - شارع 9 - بجوار أبو أنس السوري</p>
-        <p><strong>رقم الواتساب:</strong><br>01155284381</p>
-        <a href="https://wa.me/201155284381" class="whatsapp-btn" target="_blank">
-          واتساب الآن
+let currentCategory = "all";
+
+function renderProducts() {
+  const searchText = search.value.trim().toLowerCase();
+
+  const filtered = products.filter(product => {
+    const matchesCategory =
+      currentCategory === "all" ||
+      product.category === currentCategory;
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchText) ||
+      product.description.toLowerCase().includes(searchText);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  productList.innerHTML = "";
+
+  if (filtered.length === 0) {
+    productList.innerHTML =
+      '<div class="no-results">مفيش منتجات مطابقة للبحث.</div>';
+    return;
+  }
+
+  filtered.forEach(product => {
+    const message =
+      "السلام عليكم، عايز استفسر أو أطلب: " + product.name;
+
+    const whatsapp =
+      "https://wa.me/201155284381?text=" +
+      encodeURIComponent(message);
+
+    const card = document.createElement("div");
+    card.className = "product";
+
+    card.innerHTML = `
+      <div class="product-image">${product.icon}</div>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="price">${product.price}</div>
+        <a class="order" href="${whatsapp}" target="_blank">
+          اطلب عبر واتساب
         </a>
       </div>
-    </div>
-  </section>
+    `;
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Tow Brazer - جميع الحقوق محفوظة</p>
-    </div>
-  </footer>
+    productList.appendChild(card);
+  });
+}
+
+categoryButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    categoryButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    currentCategory = button.dataset.category;
+    renderProducts();
+  });
+});
+
+search.addEventListener("input", renderProducts);
+
+renderProducts();
+</script>
 
 </body>
 </html>
